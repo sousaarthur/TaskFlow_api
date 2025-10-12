@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:5433/taskflow
+    username: admin
+    password: 123
+  jpa:
+    show-sql: true
+api:
+  security: 
+    token: 
+      secret: ${JWT_SECRET:MY_SECRET_KEY}

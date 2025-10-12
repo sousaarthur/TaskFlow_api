@@ -1,0 +1,8 @@
+CREATE TABLE task(
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  completed BOOLEAN NOT NULL DEFAULT false,
+  created_at DATE DEFAULT CURRENT_DATE,
+  user_id TEXT REFERENCES users(id) ON DELETE CASCADE
+);
