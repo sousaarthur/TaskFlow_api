@@ -1,6 +1,6 @@
 package com.sousaarthur.TaskFlow.dto;
 
-import com.sousaarthur.TaskFlow.domain.user.User;
+import com.sousaarthur.TaskFlow.domain.task.Task;
 
 import jakarta.validation.constraints.NotNull;
 
@@ -9,5 +9,14 @@ public record UpdateTaskDTO(
   Long id,
   String title,
   String description,
-  User user
-) {}
+  boolean completed
+) {
+  public UpdateTaskDTO(Task task){
+    this(
+      task.getId(),
+      task.getTitle(),
+      task.getDescription(),
+      task.getCompleted()
+    );
+  }
+}

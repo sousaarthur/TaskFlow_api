@@ -43,6 +43,20 @@ public class Task {
   @JoinColumn(name = "user_id")
   private User user;
 
+  public boolean getCompleted(){
+    return this.completed;
+  }
+
+  public void updateTask(UpdateTaskDTO dto){
+    if(dto.title() != null){
+      this.title = dto.title();
+    }
+    if(dto.description() != null){
+      this.description = dto.description();
+    }
+    this.completed = dto.completed();
+  }
+  
   public Task(TaskDTO dto, User user) {
     this.id = dto.id();
     this.title = dto.title();
@@ -52,11 +66,5 @@ public class Task {
     this.user = user;
   }
 
-  public Task(UpdateTaskDTO dto, User user){
-    this.id = dto.id();
-    this.title = dto.title();
-    this.description = dto.description();
-    this.user = user;
-  }
 
 }
