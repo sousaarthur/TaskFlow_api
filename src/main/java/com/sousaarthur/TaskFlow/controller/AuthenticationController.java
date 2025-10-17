@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sousaarthur.TaskFlow.domain.user.AuthenticationDTO;
-import com.sousaarthur.TaskFlow.domain.user.RegisterDTO;
 import com.sousaarthur.TaskFlow.domain.user.User;
 import com.sousaarthur.TaskFlow.domain.user.UserRepository;
+import com.sousaarthur.TaskFlow.dto.AuthenticationDTO;
 import com.sousaarthur.TaskFlow.dto.LoginResponseDTO;
+import com.sousaarthur.TaskFlow.dto.RegisterDTO;
 import com.sousaarthur.TaskFlow.infra.security.TokenService;
 
 import jakarta.validation.Valid;

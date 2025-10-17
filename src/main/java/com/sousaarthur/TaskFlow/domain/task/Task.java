@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 
 import com.sousaarthur.TaskFlow.domain.user.User;
 import com.sousaarthur.TaskFlow.dto.TaskDTO;
-import com.sousaarthur.TaskFlow.dto.UpdateTaskDTO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -47,7 +46,7 @@ public class Task {
     return this.completed;
   }
 
-  public void updateTask(UpdateTaskDTO dto){
+  public void updateTask(TaskDTO dto){
     if(dto.title() != null){
       this.title = dto.title();
     }

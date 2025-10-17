@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sousaarthur.TaskFlow.domain.task.Task;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,18 +27,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Table(name = "users")
 public class User implements UserDetails {
-  @Id
-  @GeneratedValue(strategy = GenerationType.UUID)
-  private String id;
-  private String login;
-  private String password;
-  private UserRole role;
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
+    private String login;
+    private String password;
+    private UserRole role;
 
-  @OneToMany(mappedBy = "user")
-  @JsonIgnore
-  private List<Task> tasks;
 
-    public User(String login, String password){
+    @OneToMany(mappedBy = "user")
+    @JsonIgnore
+    private List<Task> tasks;
+
+    public User(String login, String password) {
         this.login = login;
         this.password = password;
         this.role = UserRole.USER;
@@ -45,12 +47,16 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        if(this.role == UserRole.ADMIN) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
-        else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+        if (this.role == UserRole.ADMIN)
+            return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
+        else
+            return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
     @Override
     public String getUsername() {
         return login;
     }
+
+
 }
