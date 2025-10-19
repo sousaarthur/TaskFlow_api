@@ -1,11 +1,18 @@
 spring:
   datasource:
-    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:5433/taskflow
-    username: admin
-    password: 123
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
   jpa:
     show-sql: true
+    properties:
+      hibernate.default_schema: taskflow_db
+  flyway:
+    enabled: true
+    schemas: taskflow_db
+    table: flyway_schema_history
+
 api:
-  security: 
-    token: 
+  security:
+    token:
       secret: ${JWT_SECRET:MY_SECRET_KEY}
