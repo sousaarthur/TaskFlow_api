@@ -2,21 +2,6 @@
 
 Uma API REST para gerenciamento de tarefas construída com Spring Boot, que oferece funcionalidades de autenticação JWT e operações CRUD completas para tasks.
 
-## 📋 Índice
-
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Tecnologias](#tecnologias)
-- [Pré-requisitos](#pré-requisitos)
-- [Instalação](#instalação)
-- [Configuração](#configuração)
-- [Como Executar](#como-executar)
-- [API Endpoints](#api-endpoints)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Banco de Dados](#banco-de-dados)
-- [Autenticação](#autenticação)
-- [Exemplos de Uso](#exemplos-de-uso)
-- [Testes](#testes)
-
 ## 🚀 Sobre o Projeto
 
 TaskFlow é uma API REST moderna para gerenciamento de tarefas que permite:
