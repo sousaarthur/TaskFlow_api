@@ -283,20 +283,6 @@ curl -X GET http://localhost:8080/task/stats \
   -H "Authorization: Bearer SEU_TOKEN"
 ```
 
-## 🧪 Testes
-
-Para executar os testes:
-
-```bash
-./mvnw test
-```
-
-Ou no Windows:
-
-```cmd
-mvnw.cmd test
-```
-
 ## 🔗 Frontend
 
 Esta API foi desenvolvida para trabalhar com um frontend Angular rodando em `http://localhost:4200`. As configurações de CORS estão configuradas para permitir requisições desta origem.
